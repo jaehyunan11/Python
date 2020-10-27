@@ -1,0 +1,9 @@
+1. python3 -m venv py3Env // create py3Env virtual environment
+2. source py3Env/bin/activate // Activate py3Env virtual environment
+3. pip list // check what are the installed
+4. pip install Django==1.11.9 // intall Django in the virtual environment
+5. deactivate // deactivate virtual environment
+6  source myEnvironments/py3Env/bin/activate // Activate virtual environment in different path
+7. pip uninstall Django
+8. pip show Django
+9. pip search Flask 
