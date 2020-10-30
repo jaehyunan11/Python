@@ -1,0 +1,6 @@
+guido.make_deposit(100)
+guido.make_deposit(200)
+guido.make_deposit(300)
+guido.make_withdrawal(50)
+guido.display_user_balance()
+guido.make_deposit(100).make_deposit(200).make_deposit(300).make_withdrawal(50).display_user_balance()
