@@ -7,3 +7,5 @@
 7. pip uninstall Django
 8. pip show Django
 9. pip search Flask 
+
+
