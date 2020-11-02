@@ -1,5 +1,3 @@
-import random
-
 class Store:
     def __init__(self, store_name):
         self.store_name = store_name
@@ -18,18 +16,21 @@ class Store:
         return self
 
     def inflation(self, percent_increase):
-        self.list_product.update_price(percent_increase)
+        for product in self.list_product:
+            product.update_price(percent_increase, True)
         return self
 
     def set_clearance(self, category, percent_discount):
-        pass
+        for product in self.list_product:
+            if self.list_product[category] == category:
+                product.update_price(percent_discount, False)
+        return self
 
 class Product:
-    def __init__(self, product_name, product_price, product_category, id_num):
+    def __init__(self, product_name, product_price, product_category):
         self.product_name = product_name
         self.product_price = product_price
         self.product_category = product_category
-        self.id = id_num
 
     def update_price(self, percent_change, is_increased):
         if is_increased == True:
@@ -39,17 +40,24 @@ class Product:
         return self
             
     def print_info(self):
-        print(f"Product: {self.product_name}\nCatergory: {self.product_category}\nPrice: {self.product_price}\nId: {self.id}")
+        print(f"Product: {self.product_name}\nCatergory: {self.product_category}\nPrice: {self.product_price}")
         return self
 
-product1 = Product("Coffee", 5, "beverages", 1) #instance1
-product2 = Product("TV", 500, "electronics", 2) #instance2
+product1 = Product("Coffee", 5, "beverages") #instance1
+product2 = Product("TV", 500, "electronics") #instance2
+
 
 store = Store("target")
+# store.add_product(product2)
+# store.show_products()
 store.add_product(product1)
-store.show_products()
-store.sell_product(1)
-store.show_products()
+store.add_product(product2).show_products()
+store.set_clearance("beverage", 0.5).show_products()
+# store.add_product(product1).inflation(0.1).set_clearance("beverages",0.5).show_products()
+# store.add_product(product2).set_clearance("electronics", 0.5).show_products()
+# store.show_products()
+# store.sell_product(1)
+# store.show_products()
 
 
 
