@@ -1,11 +1,7 @@
 class User:
-    def __init__(self, username, bank_name):
+    def __init__(self, username):
         self.name = username
-        self.account_num = math.random()
         self.account = BankAccount(username)
-
-    def getAccountNum(self):
-        return self.getAccountNum
 
     def make_deposit(self, amount):
         self.account.deposit(amount)
@@ -22,19 +18,9 @@ class User:
         return self
 
 class BankAccount:
-    def __init__(self, int_rate=0, balance=0, account_num=""):
+    def __init__(self, int_rate=0, balance=0):
         self.int_rate = int_rate
         self.balance = balance
-        self.bank_name = bank_name
-        self.account_num = account_num
-
-    def bank_name(self):
-        print(f"Bank :{self.bank_name}")
-        return self
-
-    def account_num(self):
-        print(f"Account number: {self.account_num}")
-        return self
 
     def deposit(self, amount):
         self.balance += amount
@@ -57,5 +43,5 @@ class BankAccount:
             self.balance = self.balance + (self.balance * self.int_rate)
         return self
 
-mark = User("Mark", "Chase")
-print(mark.bank_name().make_deposit(100).make_deposit(100).make_withdrawal(50).make_withdrawal(300).display_user_balance())
+mark = User("Mark")
+print(mark.make_deposit(100).make_deposit(100).make_withdrawal(50).make_withdrawal(300).display_user_balance())
