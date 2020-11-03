@@ -1,3 +1,5 @@
+import random
+
 class Store:
     def __init__(self, store_name):
         self.store_name = store_name
@@ -21,16 +23,14 @@ class Store:
         return self
 
     def set_clearance(self, category, percent_discount):
-        for product in self.list_product:
-            if self.list_product[category] == category:
-                product.update_price(percent_discount, False)
-        return self
+        pass
 
 class Product:
     def __init__(self, product_name, product_price, product_category):
         self.product_name = product_name
         self.product_price = product_price
         self.product_category = product_category
+        self.product_id = random.randint(1,50)
 
     def update_price(self, percent_change, is_increased):
         if is_increased == True:
@@ -40,24 +40,22 @@ class Product:
         return self
             
     def print_info(self):
-        print(f"Product: {self.product_name}\nCatergory: {self.product_category}\nPrice: {self.product_price}")
+        print(f"Product: {self.product_name}\nCatergory: {self.product_category}\nPrice: {self.product_price}\nID: {self.product_id}")
         return self
 
 product1 = Product("Coffee", 5, "beverages") #instance1
 product2 = Product("TV", 500, "electronics") #instance2
 
-
 store = Store("target")
-# store.add_product(product2)
-# store.show_products()
-store.add_product(product1)
-store.add_product(product2).show_products()
-store.set_clearance("beverage", 0.5).show_products()
-# store.add_product(product1).inflation(0.1).set_clearance("beverages",0.5).show_products()
-# store.add_product(product2).set_clearance("electronics", 0.5).show_products()
-# store.show_products()
-# store.sell_product(1)
-# store.show_products()
+store.add_product(product1).show_products()
+# product1.update_price(0.5,True).print_info()
+
+
+
+
+# store.add_product(product2).show_products()
+# store.set_clearance("beverage", 0.5).show_products()
+
 
 
 

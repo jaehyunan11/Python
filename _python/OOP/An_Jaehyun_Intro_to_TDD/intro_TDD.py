@@ -22,6 +22,16 @@ class FunctionalTest(unittest.TestCase):
         self.assertEqual(isPalidrome("malayalam"), True)
         self.assertEqual(isPalidrome("malayalamf"), False)
         self.assertEqual(isPalidrome("anna"), True)
+        self.assertEqual(isPalidrome("civic"), True)
+        self.assertEqual(isPalidrome("racecars"), False)
+
+    def test_coins_list(self):
+        print("test_coins_list")
+        self.assertEqual(coins(50), {'quarter': 2})
+        self.assertEqual(coins(124),{'quarter': 4, 'dime': 2, 'nickel': 0, 'penny': 4})
+        self.assertEqual(coins(1113), {'quarter': 44, 'dime': 1, 'nickel': 0, 'penny': 3})
+        self.assertEqual(coins(11134), {'quarter': 445, 'dime': 0, 'nickel': 1, 'penny': 4})
+        self.assertEqual(coins(135244), {'quarter': 5409, 'dime': 1, 'nickel': 1, 'penny': 4})
 
 
 if __name__ == '__main__':

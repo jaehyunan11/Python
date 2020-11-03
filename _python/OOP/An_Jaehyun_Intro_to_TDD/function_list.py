@@ -37,4 +37,8 @@ def fibonacci(num):
     else:
         return fibonacci(num-1) + fibonacci(num-2)
 
-print(coins(1230))
+print(coins(50))
+print(coins(124))
+print(coins(1113))
+print(coins(11134))
+print(coins(135244))
