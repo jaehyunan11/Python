@@ -23,7 +23,10 @@ class Store:
         return self
 
     def set_clearance(self, category, percent_discount):
-        pass
+        for product in self.list_product:
+            if product.product_category == category:
+                product.update_price(percent_discount, False)
+        return self
 
 class Product:
     def __init__(self, product_name, product_price, product_category):

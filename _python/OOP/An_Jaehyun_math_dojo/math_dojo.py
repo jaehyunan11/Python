@@ -2,20 +2,19 @@ class MathDojo:
     def __init__(self):
         self.result = 0
     def add(self, num, *nums):
-        print(sum(nums))
-        # for num in nums:
-        #     print(num)
-        #     self.result += num
-        #     print(self.result)
-        # return self
+        self.result += num
+        for num2 in nums:
+            self.result += num2
+            # print(self.result)
+        return self
     def subtract(self, num, *nums):
-        pass
+        self.result -= num
+        for num2 in nums:
+            self.result -= num2
+        return self
 
 # create an instance:
 md = MathDojo()
 # to test
-# x = md.add(2).add(2,5,1).subtract(3,2).result
-# print(x)
-
-x = md.add(2,5,1).result
+x = md.add(7).add(2,5,1).add(3,5,7,9).subtract(2).subtract(3,2,1).subtract(5,4,3,2,1).result
 print(x)
