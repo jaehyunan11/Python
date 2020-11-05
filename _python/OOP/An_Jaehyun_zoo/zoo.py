@@ -14,17 +14,17 @@ class Animal:
         print(f"Name:{self.name}\nAge:{self.age}\nHealth Level:{self.health_level}\nHappiness Level:{self.happiness_level}")
 
 class Lion(Animal): # child class of Animal's class
-    def __init__(self, name, age, health_level, happiness_level, attack_level):
+    def __init__(self, name, age=4, health_level=100, happiness_level=120, attack_level=100):
         super().__init__(name, age, health_level, happiness_level)
         self.attack = attack_level
 
 class Tiger(Animal): # child class of Animal's class
-    def __init__(self, name, age, health_level, happiness_level, attack_level):
+    def __init__(self, name, age=4, health_level=100, happiness_level=120, attack_level=100):
         super().__init__(name, age, health_level, happiness_level)
         self.attack = attack_level
 
 class Bear(Animal): # child class of Animal's class
-    def __init__(self, name, age, health_level, happiness_level, attack_level):
+    def __init__(self, name, age=4, health_level=100, happiness_level=120, attack_level=100):
         super().__init__(name, age, health_level, happiness_level)
         self.attack = attack_level
 
@@ -35,6 +35,7 @@ class Zoo:
 
     def add_lion(self, name):
         self.animals.append(Lion(name))
+        return self
 
     def add_tiger(self, name):
         self.animals.append(Tiger(name))
@@ -47,7 +48,7 @@ class Zoo:
         for animal in self.animals:
             animal.display_info()
     
-lion = Lion("Nala", 4, 100, 100, 120)
+lion = Lion("Nala")
 
 print(lion.feed().feed().display_info())
 zoo1 = Zoo("Jaehyun's Zoo")

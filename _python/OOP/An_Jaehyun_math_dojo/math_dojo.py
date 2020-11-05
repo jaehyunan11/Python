@@ -5,7 +5,6 @@ class MathDojo:
         self.result += num
         for num2 in nums:
             self.result += num2
-            # print(self.result)
         return self
     def subtract(self, num, *nums):
         self.result -= num
