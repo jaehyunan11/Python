@@ -19,4 +19,7 @@ def example(arr):
 Ignore constants : When using Big O notation, you always drop the constants.
 So, even if the runtime complexity is O(2N), we call it O(N)
 
+Drop less dominant terms: You only keep the most dominant term when talking Big O.
+For example, O(N^3 + 50N + 17) is simply O(N^3)
+O(1) < O(logN) < O(N) < O(NlongN) < O(N^2) < O(2^N) < O(N!)
 """
