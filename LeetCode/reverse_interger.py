@@ -1,5 +1,7 @@
 # Given an integer, return the integer with reversed digits.
 # Note: The integer could be either positive or negative.
+# slice (stop)
+# slice (start, stop, step)
 
 def solution(x):
     string = str(x)
