@@ -12,3 +12,5 @@ def selection_sort(list):
 
 list = [29, 72, 98, 13, 87, 66, 52, 51, 36]
 print(selection_sort(list))
+
+

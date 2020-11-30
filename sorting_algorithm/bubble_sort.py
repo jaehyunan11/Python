@@ -23,4 +23,4 @@ def bubble_sort_2nd(lst):
 if __name__ == '__main__':
     lst = [3,2,1,5,4]
     bubble_sort_2nd(lst)
-    print("Sorted list is ". lst)
+    print(f"Sorted list is {lst} ")
