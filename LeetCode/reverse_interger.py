@@ -3,6 +3,8 @@
 # slice (stop)
 # slice (start, stop, step)
 
+# https://towardsdatascience.com/10-algorithms-to-solve-before-your-python-coding-interview-feb74fb9bc27
+
 def solution(x):
     string = str(x)
 
